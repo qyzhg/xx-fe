@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <h1>上传Excel文件</h1>
+        <h1><heart-outlined style="color: red;"/>希希<heart-outlined style="color: red"/>的考勤计算</h1>
         <div style="height: 20px"></div>
         <a-form @submit.prevent="handleSubmit">
             <a-form-item label="选择月份" :rules="[{ required: true, message: '请选择月份' }]" has-feedback :validate-status="monthsValidate">
@@ -14,8 +14,8 @@
             </a-form-item>
             <a-form-item label="选择指纹打卡文件" :rules="[{ required: true, message: '请选择指纹打卡文件' }]" has-feedback :validate-status="file1Validate">
                 <a-upload-dragger :autoUpload="false" :beforeUpload="beforeUploadFile1" style="width: 90%">
-                    <p class="ant-upload-drag-icon" >
-                        <a-icon type="inbox" />
+                    <p class="ant-upload-drag-icon">
+                        <inbox-outlined></inbox-outlined>
                     </p>
                     <p class="ant-upload-text">
                         点击或者将指纹打卡记录拖拽到此处上传
@@ -28,7 +28,7 @@
             <a-form-item label="选择销客打卡文件" :rules="[{ required: true, message: '请选择销客打卡文件' }]" has-feedback :validate-status="file2Validate">
                 <a-upload-dragger :autoUpload="false" :beforeUpload="beforeUploadFile2" style="width: 90%">
                     <p class="ant-upload-drag-icon">
-                        <a-icon type="inbox" />
+                        <inbox-outlined></inbox-outlined>
                     </p>
                     <p class="ant-upload-text">
                         点击或者将销客打卡记录拖拽到此处上传
@@ -47,8 +47,14 @@
 
 <script>
 import axios from 'axios';
+import { InboxOutlined, HeartOutlined } from '@ant-design/icons-vue';
+
 
 export default {
+    components: {
+        InboxOutlined,
+        HeartOutlined
+    },
   name: 'MainPage',
     computed: {
         file1Validate() {
