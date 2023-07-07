@@ -6,11 +6,11 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   // 打包输出目录
-  build: {
-    outDir: 'static',
-    assetsDir: '',
-  },
-  base: '/static/',
+  // build: {
+  //   outDir: 'static',
+  //   assetsDir: '',
+  // },
+  // base: '/static/',
   plugins: [
     vue(),
   ],
